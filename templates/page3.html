@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}console picker{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Video Game Titles Consoles</title>
+    </head>
+    <body>
+	<div class="row">
+	
+	<div class="col-sm-4">
+	</div>
+		<div class="col-sm-4">
+			<br>
+			<p>Find what games you can play on your console!</p>
+	
+			<form action="/p3">
+			<select name="console">
+			{{ console_options }}
+			</select>
+			<br><br>
+			<input type="submit" value="Show console games">
+			</form>
+			<div id="consoleFacts">
+			{% for games in consoleFacts %}
+			<p>{{ games }}</p>
+			{% endfor %}
+		</div>
+	</div>
+			
+	<div class="col-sm-4">
+	</div>
+	
+	</body>
+</html>
+{% endblock %}
